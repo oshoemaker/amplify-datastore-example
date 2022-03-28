@@ -3,7 +3,7 @@ enum PostStatus {
   INACTIVE
 }
 
-type Post @model {
+type Post @model @auth(rules: [{ allow: public, provider: apiKey}]) {
   id: ID!
   title: String!
   rating: Int!
